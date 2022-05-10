@@ -2,42 +2,161 @@
     width: 100px;
     height: 100px;
     border: 1px solid red;
+    transition: 3s;
 }
+
+.ex-1-square:hover{
+    background-color: red;
+}
+
+     /* done  */
+
 .ex-2-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-2-square:active{
+    width: 300px;
+}
+  
+/* done  */
+
 .ex-3-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-3-square:hover{
+    border-radius: 50%;
+}
+
+/* done  */
+
 .ex-4-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-4-square:hover{
+    opacity: 0%;
+}
+
+/* done  */
+
+
 .ex-5-square {
     margin: 20px;
     width: 60px;
     height: 60px;
     background: red;
+    transition: 3s;
 }
+
+.ex-5-square:hover{
+    transform: scale(2);
+}
+
+.ex-5-square:active{
+    transform: scale(0.5);
+}
+
+/* done  */
+
+
 .ex-6-img, .ex-7-img, .ex-8-img {
     width: 500px;
 }
 
+.ex-6-img:hover{
+    filter: grayscale(1)
+}
+
+.ex-7-img:hover{
+    filter: grayscale(1) invert(1);
+    transition: 3s;
+}
+
+.ex-8-img:hover{
+    filter: grayscale(1) brightness(0.7);
+    transition: 2s;
+    border-radius: 10px;
+}
+
+/* done  */
+
+
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
+    transition: 3s;
 }
+
+.ex-9-img:hover{
+    filter: grayscale(1) brightness(0.7);
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* done  */
+
 .ex-10-icon {
     font-size: 60px;
+    animation-name: spinex10;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
+
+@keyframes spinex10 {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}
+
+/* done  */
+
 .ex-11-icon {
     font-size: 60px;
 }
+
+.ex-11-icon:hover{
+    animation-name: spinex11;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    
+    
+}
+
+
+@keyframes spinex11 {
+    0% {
+      transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      75% {
+        transform: rotate(270deg);
+      }
+  }
+
+  /* end  */
+
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -51,6 +170,8 @@
     text-align: center;
     text-decoration: none;
 }
+
+
 .ex-12-top-white, .ex-13-top-white {
     position: absolute;
     top: -10px;
@@ -66,4 +187,100 @@
     background: #f5f5f5;
     width: 60px;
     height: 20px;
+}
+
+.ex-12-button:hover .ex-12-top-white {
+    animation-name: movingtop;
+    animation-duration: 2000ms;
+    animation-timing-function: linear; 
+}
+
+@keyframes movingtop {
+    0% {
+        left: 10%;
+    }
+    50% {
+        left: calc(100% - 60px);
+    }
+    100% {
+        left: 10%;
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation-name: movingbottom;
+    animation-duration: 2000ms;
+    animation-timing-function: linear; 
+}
+
+@keyframes movingbottom {
+    0% {
+        right: 20%;
+    }
+    50% {
+        right: calc(100% - 60px);
+    }
+    100% {
+        right: 20%;
+    }
+}
+
+.ex-13-button:hover .ex-13-top-white {
+    animation: moveTopWhiteCompletely 2s linear;
+}
+
+@keyframes moveTopWhiteCompletely {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+    75% {
+        left: 0;
+        top: 100%;
+    }
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+    100% {
+        left: 10%;
+        top: -10px;
+    }
+}
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: moveBottomWhiteCompletely 2s linear;
+}
+@keyframes moveBottomWhiteCompletely {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
 }
